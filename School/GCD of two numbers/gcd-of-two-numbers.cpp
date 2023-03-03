@@ -10,13 +10,25 @@ class Solution
 	public:
     int gcd(int A, int B) 
 	{ 
-	    // code here
+	    //code here
 	    while(A!=0 && B!=0){
 	        if(A>B) A=A%B;
 	        else B=B%A;
 	    }
 	    if(A)return A;
 	    else return B;
+	   
+	   //int max;
+	   //for(int i=1;i<=A;i++)
+	   //{
+	   //    if(A%i==0 && B%i==0)
+	   //    {
+	   //        max=i;
+	   //    }
+	   //}
+	   
+	   
+	   //return max;
 	      
 	} 
 };
