@@ -11,41 +11,22 @@ class Solution{
 public:
     int getPairsCount(int arr[], int n, int k) {
         // code here
-        // int count=0;
         
-        // for(int i=0;i<n;i++)
-        // {
-        //     for(int j=i+1;j<n;j++)
-        //     {
-        //         if(arr[i]+arr[j]==k)
-        //         {
-        //             count++;
-        //         }
-        //     }
-           
-        // }
-        // return count;---->TIME LIMIT EXCEEDED 
+        unordered_map<int ,int>map;
         
-       if(n==1) {
-            return 0;
+        int count=0;
+        
+        for(int i=0;i<n;i++ )
+        {
+            if(map.find(k-arr[i])!=map.end())
+            {
+                count=count+map[k-arr[i]];
+            }
+            
+            map[arr[i]]++;
         }
         
-        unordered_map<int, int> mp;
-        
-        for(int i=0;i<n;i++) {
-            mp[arr[i]]++;
-        }
-        
-        int count = 0;
-        
-        for(int i=0;i<n;i++) {
-            int val= k-arr[i];
-            count+= mp[val];
-            if(val == arr[i])
-                count--;       
-        }
-
-        return count/2;
+        return count;
     }
 };
 
