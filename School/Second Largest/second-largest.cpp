@@ -12,22 +12,32 @@ public:
 
 	int print2largest(int arr[], int n) {
 	   
-	    int max=INT_MIN, secondmax=INT_MIN;
-	    for(int i=0;i<n;i++)
+	    int largest=arr[0];
+	    int slargest=INT_MIN;
+	    
+	    
+	    for(int i=1;i<n;i++)
 	    {
-	        if(arr[i]>max)
+	        if(arr[i]>largest)
 	        {
-	            secondmax=max;
-	            max=arr[i];
+	            slargest=largest;
+	            largest=arr[i];
+	            
 	        }
-	        else if(arr[i]>secondmax && arr[i]!=max)
+	        else if(arr[i]<largest && arr[i]>slargest)
 	        {
-	            secondmax=arr[i];
+	            slargest=arr[i];
 	        }
 	    }
-	    if(secondmax<0)
-	    return -1;
-	    return secondmax;
+	    
+	    if(slargest==INT_MIN)
+	    {
+	        return -1;
+	    }
+	    else
+	    {
+	        return slargest;
+	    }
 	    
 	}
 };
