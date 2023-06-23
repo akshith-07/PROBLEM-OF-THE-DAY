@@ -26,29 +26,35 @@ int main() {
 // } Driver Code Ends
 
 
-vector<int> minAnd2ndMin(int a[], int n) {
+vector<int> minAnd2ndMin(int arr[], int n) {
     
-    vector<int> v;
-    sort(a,a+n);
-    v.push_back(a[0]);
-    for(int i=1;i<n;i++)
-    {
-        if(v[0]!=a[i])
-        {
-            v.push_back(a[i]);
-            break;
-        }else
-        {
-            continue;
-        }    
-        
-    }
-    if(v.size()==2)
-    {
-    return v;
-    }
-    else
-    {
-        return {-1};
-    }
+   vector<int>ans;
+   
+   int smallest=arr[0];
+   int ssmallest=INT_MAX;
+   
+   for(int i=1;i<n;i++)
+   {
+       if(arr[i]<smallest)
+       {
+           ssmallest=smallest;
+           smallest=arr[i];
+       }
+       else if(arr[i]>smallest && arr[i]<ssmallest)
+       {
+           ssmallest=arr[i];
+       }
+   }
+   
+   ans.push_back(smallest);
+   
+   vector<int >temp;
+   if(ssmallest==INT_MAX)
+   {
+       temp.push_back(-1);
+       return temp;
+   }
+       ans.push_back(ssmallest);
+   
+   return ans;
 }
