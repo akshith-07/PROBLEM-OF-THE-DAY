@@ -10,25 +10,20 @@ using namespace std;
 
 class Solution{
 public:
-    int remove_duplicate(int a[],int n){
-        // code here
+    int remove_duplicate(int arr[],int n){
         
-       int i=0;
-       
-       //int arr[n]={0};
-       
-       for(int j=1;j<n;j++)
-       {
-           if(a[i]!=a[j])
-           {
-               i++;
-               a[i]=a[j];
-               
-           }
-       }
-       
-       
-       return i+1;
+    int j=0;
+      
+      for(int i=0;i<n;i++)
+      {
+          if(arr[i]!=arr[j])
+          {
+              arr[j+1]=arr[i];
+              j++;
+          }
+      }
+      
+      return j+1;
     }
 };
 
