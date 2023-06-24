@@ -12,21 +12,15 @@ public:
     void leftRotate(int arr[], int n, int d) {
         // code here
         
-        vector<int>st;
-        
-        for(int i=d;i<n;i++)
+        d=d%n;
+        if(d==0)
         {
-            st.push_back(arr[i]);
-        }
-        for(int i=0;i<d;i++)
-        {
-            st.push_back(arr[i]);
+            return;
         }
         
-        for(int i=0;i<n;i++)
-        {
-            arr[i]=st[i];
-        }
+        reverse(arr,arr+d);
+        reverse(arr+d,arr+n);
+        reverse(arr,arr+n);
     }
 };
 
