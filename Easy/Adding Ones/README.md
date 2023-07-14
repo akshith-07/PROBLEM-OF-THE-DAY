@@ -5,7 +5,7 @@ N = 3, K = 4
 1 1 2 3
 <strong>Output:</strong>
 2 3 4
-<strong>Explanation:</strong>
+<strong>Explanation:</strong>  
 Initially the array is {0, 0, 0}. After the
 first 1, it becomes {1, 1, 1}. After the
 second 1 it becomes {2, 2, 2}. After 2, <br>it becomes {2, 3, 3} and <br>After 3 it becomes, {2, 3, 4}. </span></pre>
